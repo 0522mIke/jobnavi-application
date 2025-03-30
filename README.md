@@ -43,8 +43,9 @@
 
 ### フロントエンド
 
-- Next.js 14
+- Next.js 15
 - React
+- TypeScript
 - Tailwind CSS
 
 ### バックエンド・データベース
