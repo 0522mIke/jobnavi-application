@@ -28,8 +28,12 @@ export default function Login() {
     try {
       await loginUser(email, password);
       router.push(`/${redirect}`);
-    } catch (error: any) {
-      setError('ログインに失敗しました: ' + error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError('ログインに失敗しました: ' + error.message);
+      } else {
+        setError('ログインに失敗しました');
+      }
     }
   };
 
@@ -40,10 +44,16 @@ export default function Login() {
     try {
       await loginUser(user.email, user.password);
       router.push(`/${redirect}`);
-    } catch (error: any) {
-      setError('デモユーザーでのログインに失敗しました: ' + error.message);
+    } catch (error: unknown) {
+      // errorがErrorオブジェクトかどうかをチェック
+      if (error instanceof Error) {
+        setError('デモユーザーでのログインに失敗しました: ' + error.message);
+      } else {
+        setError('デモユーザーでのログインに失敗しました');
+      }
     }
   };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-[#fdfcfb] to-[#e8dfd6] flex flex-col items-center">
