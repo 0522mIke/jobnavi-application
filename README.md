@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 就職活動管理アプリ
 
-## Getting Started
+## プロジェクト概要
 
-First, run the development server:
+ポートフォリオ用のプロジェクト3つ目。就職活動中の応募状況を一元管理できるWebアプリケーション。求職者の就活をより効率的にサポートします。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 開発背景・目的
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+従来のスプレッドシートや一般的な就活管理ツールの使いにくさを解消するため、IT業界の求職者に特化した管理アプリを開発しました。直感的で明るいUI/UXを追求し、就職活動のモチベーションを高めることを目指しています。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+応募状況や面接進捗を可視化することで、自身に合う業界や職種を客観的に分析できるツール。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ターゲットユーザー
 
-## Learn More
+- 新卒・第二新卒の就職活動中の学生
+- IT業界への転職を目指す社会人
+- 複数企業に同時に応募している求職者
 
-To learn more about Next.js, take a look at the following resources:
+## 主な機能
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 応募企業の求人情報登録
+- リアルタイムでの応募状況ステータス管理
+- 面接日程と詳細メモ
+- ソート機能
+- 修正フォームによる変更
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 要件定義
 
-## Deploy on Vercel
+### 機能要件
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ユーザー認証
+- 企業リストの完全なCRUD機能
+- 詳細なステータス管理
+- 柔軟な面接メモ登録
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 非機能要件
+
+- レスポンシブデザイン
+- ユーザー別データ管理
+- セキュアな認証システム
+
+## 使用技術スタック
+
+### フロントエンド
+
+- Next.js 14
+- React
+- Tailwind CSS
+
+### バックエンド・データベース
+
+- Firebase Firestore
+
+### 認証
+
+- Firebase Authentication
+
+### デプロイ
+
+- Vercel
+
+## 開発における挑戦
+
+Firebaseを使ったDB実装において、以下の技術的課題に取り組みました：
+
+- ユーザー固有のデータ管理
+- セキュアなID・パス設計
+- リアルタイムデータ同期
+
+## アプリケーションの特長
+
+- レスポンシブで直感的なデザイン
+- シンプルかつ機能的なUI
+- リアルタイムデータ更新
+- ユーザー別リスト管理
+- デモユーザーによるワンクリックログイン
+
+## セキュリティ対応
+
+- 重要な API Key や Firebase 設定情報は `.env.local` に保存
+- `.gitignore` に `.env.local` を追記
+- 環境変数を安全に管理
+
+## デプロイ
+
+Vercel上で公開
+
+## 今後の改善点
+
+- 企業別優先順位での並び替え実装
+- 詳細な分析ダッシュボード
+- APIを活用した企業情報の自動取得機能
