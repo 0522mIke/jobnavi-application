@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { loginUser } from '@/lib/auth';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 // デモユーザー情報
 const demoUsers = [
@@ -12,15 +13,23 @@ const demoUsers = [
   { email: 'user3@example.com', password: 'pass3333' }
 ];
 
-export default function Login() {
+export default function Login() { 
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LoginContent />
+    </Suspense>
+  );
+}
+
+function LoginContent() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
   const searchParams = useSearchParams();
-
+  
   const redirect = searchParams.get('redirect') || 'list';
-
+  
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
