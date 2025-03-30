@@ -235,7 +235,7 @@ const ListPage = () => {
      
         <main className="flex flex-col items-center justify-center w-full px-4 py-6">
            <div className="w-full max-w-7xl bg-white rounded-xl shadow-lg p-6">
-           <h2 className="text-xl font-normal mb-4 text-gray-800">応募リスト</h2>
+            <h2 className="text-4xl font-medium text-gray-700">応募リスト</h2>
 
           {/* 編集フォームが表示される場合 */}
           {editJob && (
