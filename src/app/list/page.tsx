@@ -92,7 +92,7 @@ const ListPage = () => {
 
   // ソート関数を追加
   const getSortedJobs = () => {
-    let sorted = [...jobs];
+    const sorted = [...jobs];
     
     switch(sortOption) {
       case 'newest': 

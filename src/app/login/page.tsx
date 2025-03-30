@@ -21,7 +21,7 @@ export default function Login() {
 
   const redirect = searchParams.get('redirect') || 'list';
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
     

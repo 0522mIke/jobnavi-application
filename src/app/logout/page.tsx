@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Logout() {
   const [isLoggedOut, setIsLoggedOut] = useState(false);
-  const router = useRouter();
+  const _router = useRouter();
 
   useEffect(() => {
     const handleLogout = async () => {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { auth } from '@/lib/firebase'; // 実際のパスに合わせて調整
+import { auth } from '@/lib/firebase';
 import Link from "next/link";
 
 export default function Home() {

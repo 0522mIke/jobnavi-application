@@ -17,7 +17,7 @@ export default function Register() {
   const [status, setStatus] = useState<typeof statusOptions[number]>("応募前");
   const [jobTag, setJobTag] = useState("");
   const [url, setUrl] = useState("");
-  const [createdAt, setCreatedAt] = useState<Timestamp | null>(null);
+  const [_createdAt, _setCreatedAt] = useState<Timestamp | null>(null);
 
   const router = useRouter();
 
