@@ -2,13 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import { logoutUser } from '@/lib/auth';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Logout() {
   const [isLoggedOut, setIsLoggedOut] = useState(false);
-  const _router = useRouter();
-
+  
   useEffect(() => {
     const handleLogout = async () => {
       try {

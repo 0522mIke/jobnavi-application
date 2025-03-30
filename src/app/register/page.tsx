@@ -3,7 +3,7 @@
 //DB提携のためインポート
 import { useState, useEffect } from "react";
 import { db } from "@/lib/firebase";
-import { collection, addDoc, serverTimestamp, Timestamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useRouter } from 'next/navigation';
 import { auth } from '@/lib/firebase';
 import Link from "next/link";
@@ -17,8 +17,7 @@ export default function Register() {
   const [status, setStatus] = useState<typeof statusOptions[number]>("応募前");
   const [jobTag, setJobTag] = useState("");
   const [url, setUrl] = useState("");
-  const [_createdAt, _setCreatedAt] = useState<Timestamp | null>(null);
-
+  
   const router = useRouter();
 
   // 追加: 認証チェック
