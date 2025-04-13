@@ -27,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body
         className={`${notoSans.variable} ${zenKaku.variable} antialiased`}
       >
