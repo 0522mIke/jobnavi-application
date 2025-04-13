@@ -1,12 +1,6 @@
-import { 
-  signInWithEmailAndPassword, 
-  signOut,
-  onAuthStateChanged,
-  User
-} from "firebase/auth";
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "./firebase";
 
-// ログイン関数
 export const loginUser = async (email: string, password: string) => {
   try {
     return await signInWithEmailAndPassword(auth, email, password);
@@ -16,7 +10,6 @@ export const loginUser = async (email: string, password: string) => {
   }
 };
 
-// ログアウト関数
 export const logoutUser = async () => {
   try {
     await signOut(auth);
@@ -26,7 +19,6 @@ export const logoutUser = async () => {
   }
 };
 
-// 認証状態の監視
 export const onAuthStateChange = (callback: (user: User | null) => void) => {
   return onAuthStateChanged(auth, callback);
 };

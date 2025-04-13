@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from '@/context/auth-context';
 
-// 日本語フォントの設定
 const notoSans = Noto_Sans_JP({
   variable: "--font-noto-jp",
   weight: ["400", "700"],
@@ -30,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${notoSans.variable} ${zenKaku.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

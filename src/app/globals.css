@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Zen+Kaku+Gothic+New:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
-@import "tailwindcss";
 
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,4 +28,29 @@
   body {
     font-family: var(--font-zen-kaku), var(--font-noto-jp), sans-serif;
   }
+}
+
+.anim-section {
+  opacity: 0;
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  transition-delay: 0.3s;
+}
+
+.anim-from-left {
+  transform: translateX(-30px);
+}
+
+.anim-from-right {
+  transform: translateX(30px);
+  transition-duration: 1.7s;
+  transition-delay: 0.6s;
+}
+
+.anim-section.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-from-bottom {
+  transform: translateY(40px);
 }
